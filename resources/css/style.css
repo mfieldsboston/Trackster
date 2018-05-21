@@ -1,3 +1,53 @@
 /*
   Custom styles for Trackster App
 */
+
+/* HEADER STYLES */
+
+.header {
+  background-color: rgb(35, 2, 63);
+  color: white;
+  padding: 2.75rem 0;
+}
+
+/*.header h1, .header input, .header i {
+  border: 1px solid white;
+}*/
+
+.header h1 {
+  font-size: 2.5rem;
+  font-family: Righteous;
+  color: rgb(255, 0, 171);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header input {
+  color: rgb(74, 74, 74);
+  height: 3rem;
+  border: 0;
+  border-radius: 10px;
+}
+
+.header i {
+  color: rgb(255, 102, 204);
+}
+
+.header i:hover {
+  color: rgb(255, 0, 107);
+}
+
+/* INPUT PLACEHOLDER STYLES */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(191, 191, 191);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(191, 191, 191);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(191, 191, 191);
+}
