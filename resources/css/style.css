@@ -51,3 +51,45 @@
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: rgb(191, 191, 191);
 }
+
+/* COLUMN HEADER STYLES */
+
+.column_titles {
+  background-color: rgb(104, 0, 255);
+  padding: .6rem 0;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.column_titles p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* COLUMN SONG STYLES */
+
+.song_info {
+  background-color: rgb(159, 159, 159);
+  padding: .6rem 0;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.song_info p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(74, 74, 74);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.song_info:hover {
+  background-color: rgb(239, 237, 242);
+}
+
+.song_info i {
+  color: rgb(255, 0, 171);
+}
