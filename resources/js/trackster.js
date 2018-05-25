@@ -18,7 +18,7 @@ Trackster.renderTracks = function(tracks) {
   $songList.empty();
 
   for (i = 0; i < tracks.length; i++) {
-      console.log(tracks[i], 'OUTPUT of renderTracks');
+      //console.log(tracks[i], 'OUTPUT of renderTracks');
       var mediumAlbumArt = tracks[i].image[1]["#text"];
 
       var htmlTrackRow =
