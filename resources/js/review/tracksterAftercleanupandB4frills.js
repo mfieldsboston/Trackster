@@ -14,13 +14,11 @@ $(document).ready(function() {
 Trackster.renderTracks = function(tracks) {
 
   var $songList = $('#song-list');
-
   $songList.empty();
 
   for (i = 0; i < tracks.length; i++) {
-      //console.log(tracks[i], 'OUTPUT of renderTracks');
-      var mediumAlbumArt = tracks[i].image[1]["#text"];
 
+      var mediumAlbumArt = tracks[i].image[1]["#text"];
       var htmlTrackRow =
         '<div class="row song_info">' +
           '<a href="'+ tracks[i].url + '" target="_blank">' +
@@ -44,7 +42,6 @@ Trackster.searchTracksByTitle = function(title) {
   $.ajax({
         url: 'https://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + "&api_key=" + API_KEY + "&format=json",
         type: 'GET',
-        // Expect `json` back from server
         dataType: 'json',
         success: function(data) {
           var tracks = data.results.trackmatches.track;
