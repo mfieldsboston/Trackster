@@ -5,12 +5,59 @@ $(document).ready(function() {
   $("#search-button").click(function(){
     Trackster.searchTracksByTitle($("#search-input").val());
     });
-}).keydown(function(e) {
+}).keypress(function(e) {
     if(e.which == 13)  // the enter key code
      {
        Trackster.searchTracksByTitle($("#search-input").val());
      }
 });
+
+/*$(document).keypress(function(e) {
+    if(e.which == 13)  // the enter key code
+     {
+       console.log(e.which);
+     }
+});*/
+
+/*$(document).ready(function() {
+  $("#search-button").click(function(){
+    Trackster.searchTracksByTitle($("#search-input").val());
+    }, function() {
+      $( this ).keydown();
+    }).keydown(function() {
+        alert( "Handler for .keydown() called." );
+        Trackster.searchTracksByTitle($("#search-input").val());
+    });
+});*/
+
+/*$( "#search-button" ).keydown(function() {
+    alert( "Handler for .keydown() called." );
+    Trackster.searchTracksByTitle($("#search-input").val());
+  });*/
+
+/*
+$( "#other" ).click(function() {
+  $( "#target" ).keydown();
+});
+ */
+
+/*$("#search-button").keypress(function (e) {
+ var key = e.which;
+ if(key == 13)  // the enter key code
+  {
+    Trackster.searchTracksByTitle($("#search-input").val());
+    //return false;
+  }
+});  */
+
+
+/*.keydown(function(){
+        $("#search-button").css("color", "yellow");
+    })*/
+
+/*.keydown(function(){
+        alert( "Handler for .keydown() called." );
+    })*/
 
 /*
   Given an array of track data, create the HTML for a Bootstrap row for each.
