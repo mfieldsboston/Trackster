@@ -4,18 +4,6 @@ const API_KEY = '0069be8fe5748bc12374628cbb0a0055';
 $(document).ready(function() {
   $("#search-button").click(function(){
     Trackster.searchTracksByTitle($("#search-input").val());
-    //console.log($("#search-input").val(), 'it works');
-    /*$.ajax({
-          url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=tiny&api_key=0069be8fe5748bc12374628cbb0a0055&format=json",
-          type: 'GET',
-          dataType: 'json',
-          success: function(results) {
-            console.log(results);
-            },
-          error: function(req, status, err) {
-              console.log(req, status, err, 'something went wrong');
-            }
-        });*/
     });
 });
 
@@ -54,22 +42,13 @@ Trackster.renderTracks = function(tracks) {
 */
 Trackster.searchTracksByTitle = function(title) {
   $.ajax({
-        /*url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=tiny&api_key=0069be8fe5748bc12374628cbb0a0055&format=json",*/
         url: 'https://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + "&api_key=" + API_KEY + "&format=json",
         type: 'GET',
         // Expect `json` back from server
         dataType: 'json',
         success: function(data) {
           var tracks = data.results.trackmatches.track;
-          //console.log(typeof this.type, this.type, data, title);
-          //console.log(data.results.trackmatches.track[i]);
-          //console.log(tracks, 'OUTPUT of searchTracksByTitle');
-          //Trackster.renderTracks(data.results.trackmatches.track);
           Trackster.renderTracks(tracks);
-          //return data.results.trackmatches.track;
-          /*for (i = 0; i < tracks.length; i++) {
-              console.log(tracks[i], 'WOW');
-            }*/
           },
         error: function(req, status, err) {
             console.log(req, status, err, 'something went wrong');
