@@ -35,7 +35,7 @@ Trackster.renderTracks = function(tracks) {
         $('<div class="row song_info">' +
         '<div class="col-xs-1 col-xs-offset-1">' +
           '<a href="'+ url + '" target="_blank">' +
-            '<i class="fa fa-play-circle-o" id="play-button"></i>' +
+            '<i class="fa fa-play-circle-o fa-2x" id="play-button"></i>' +
           '</a>' +
           '</div>' +
           '<div class="col-xs-3">' + name + '</div>' +
