@@ -10,10 +10,6 @@
   padding: 2.75rem 0;
 }
 
-/*.header h1, .header input, .header i {
-  border: 1px solid white;
-}*/
-
 @keyframes headerchange {
     from {font-size: 1.5rem;}
     to {font-size: 2.5rem;}
