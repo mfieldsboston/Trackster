@@ -20,25 +20,50 @@ $(document).ready(function() {
 */
 Trackster.renderTracks = function(tracks) {
 
+  var here = [];
   var $songList = $('#song-list');
   $songList.empty();
 
   for (i = 0; i < tracks.length; i++) {
-      var mediumAlbumArt = tracks[i].image[1]["#text"];
+      var url = tracks[i].url;
+      var name = tracks[i].name;
+      var artist = tracks[i].artist;
+      var artwork = tracks[i].image[1]["#text"];
       var listeners = numeral(tracks[i].listeners).format('0,0');
 
-      var htmlTrackRow =
-        '<div class="row song_info">' +
-          '<a href="'+ tracks[i].url + '" target="_blank">' +
+      var $htmlTrackRow =
+        $('<div class="row song_info">' +
+          '<a href="'+ url + '" target="_blank">' +
             '<i class="fa fa-play-circle-o col-xs-1 col-xs-offset-1" id="play-button"></i>' +
           '</a>' +
-          '<p class="col-xs-3">' + tracks[i].name + '</p>' +
-          '<p class="col-xs-3">' + tracks[i].artist + '</p>' +
-          '<p class="col-xs-2"><img src="' + mediumAlbumArt + '"/></p>' +
-          '<p class="col-xs-1">' + listeners + '</p>' +
-        '</div>';
+          '<div class="col-xs-3">' + name + '</div>' +
+          '<div class="col-xs-3">' + artist + '</div>' +
+          '<div class="col-xs-2"><img src="' + artwork + '"/></div>' +
+          '<div class="col-xs-1">' + listeners + '</div>' +
+        '</div>');
 
-        $("#song-list").append(htmlTrackRow);
+        var data = {
+          url: url,
+          name: name,
+          artist: artist,
+          artwork: artwork,
+          listeners: listeners
+        };
+
+        $htmlTrackRow.data(data);
+
+        //here.push($htmlTrackRow.data("artist"));
+        //console.log(here.sort());
+
+        //console.log('TRACK ROW:', $htmlTrackRow);
+        //console.log('TRACK ROW DATA:', $htmlTrackRow.data("name"));
+        //console.log('TRACKS:', $htmlTrackRow.data("artist"));
+        //console.log('TRACKS:', $htmlTrackRow.data("artist"));
+
+        $("#song-list").append($htmlTrackRow);
+        //$("#song-list").append($htmlTrackRow.sort());
+        //$("#song-list").append($htmlTrackRow.sort().data("artist"));
+        //console.log($htmlTrackRow.data("artist"));
     }
 };
 
@@ -53,6 +78,6 @@ Trackster.searchTracksByTitle = function(title) {
           var tracks = data.results.trackmatches.track;
           Trackster.renderTracks(tracks);
           $(".header h1").removeClass("headerchange");
-          }
-      });
+        }
+    });
 };
