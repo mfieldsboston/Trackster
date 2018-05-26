@@ -51,7 +51,6 @@ Trackster.searchTracksByTitle = function(title) {
         url: 'https://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + "&api_key=" + API_KEY + "&format=json",
         success: function(data) {
           var tracks = data.results.trackmatches.track;
-          //console.log(tracks, 'WOW!');
           Trackster.renderTracks(tracks);
           $(".header h1").removeClass("headerchange");
           }
