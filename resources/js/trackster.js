@@ -33,9 +33,11 @@ Trackster.renderTracks = function(tracks) {
 
       var $htmlTrackRow =
         $('<div class="row song_info">' +
+        '<div class="col-xs-1 col-xs-offset-1">' +
           '<a href="'+ url + '" target="_blank">' +
-            '<i class="fa fa-play-circle-o col-xs-1 col-xs-offset-1" id="play-button"></i>' +
+            '<i class="fa fa-play-circle-o" id="play-button"></i>' +
           '</a>' +
+          '</div>' +
           '<div class="col-xs-3">' + name + '</div>' +
           '<div class="col-xs-3">' + artist + '</div>' +
           '<div class="col-xs-2"><img src="' + artwork + '"/></div>' +
