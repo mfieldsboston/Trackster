@@ -3,11 +3,13 @@ const API_KEY = '0069be8fe5748bc12374628cbb0a0055';
 
 $(document).ready(function() {
   $("#search-button").click(function(){
+    $(".header h1").addClass("headerchange");
     Trackster.searchTracksByTitle($("#search-input").val());
     });
 }).keydown(function(e) {
     if(e.which == 13)  // the enter key code
      {
+       $(".header h1").addClass("headerchange");
        Trackster.searchTracksByTitle($("#search-input").val());
      }
 });
@@ -49,8 +51,9 @@ Trackster.searchTracksByTitle = function(title) {
         url: 'https://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + "&api_key=" + API_KEY + "&format=json",
         success: function(data) {
           var tracks = data.results.trackmatches.track;
-          console.log(tracks, 'WOW!');
+          //console.log(tracks, 'WOW!');
           Trackster.renderTracks(tracks);
+          $(".header h1").removeClass("headerchange");
           }
       });
 };
