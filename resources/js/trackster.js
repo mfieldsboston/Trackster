@@ -25,7 +25,7 @@ $(document).ready(function() {
 */
 Trackster.renderTracks = function(tracks) {
 
-  var here = [];
+  //var here = [];
   var $songList = $('#song-list');
   $songList.empty();
 
