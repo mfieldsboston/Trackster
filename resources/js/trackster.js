@@ -4,8 +4,13 @@ const API_KEY = '0069be8fe5748bc12374628cbb0a0055';
 $(document).ready(function() {
   $("#search-button").click(function(){
     $(".header h1").addClass("headerchange");
-    Trackster.searchTracksByTitle($("#search-input").val());
-    });
+    if ($("#search-input").val()) {
+      Trackster.searchTracksByTitle($("#search-input").val());
+    }
+    else if (!$("#search-input").val()) {
+      alert('Please enter some text..');
+    }
+  });
 }).keydown(function(e) {
     if(e.which == 13)  // the enter key code
      {
